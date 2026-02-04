@@ -4,130 +4,117 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Ruoyi Shi | Personal Website</title>
-  <meta name="description" content="Ruoyi Shi — ASU Economics | Law & Compliance | Data Analysis" />
-
+  <meta name="description" content="Ruoyi Shi — Economics (ASU) | Law & Compliance | Data Analysis" />
   <style>
     :root{
-      --bg: #fff1f5;          /* light pink */
-      --card: rgba(255,255,255,.78);
-      --card2: rgba(255,255,255,.62);
-      --text: #141414;
-      --muted:#5b5b5b;
-      --border: rgba(20,20,20,.08);
-      --shadow: 0 14px 40px rgba(15, 23, 42, .10);
-      --shadow2: 0 10px 24px rgba(15, 23, 42, .08);
-      --accent:#db2777;       /* rose */
-      --accent2:#a855f7;      /* purple */
+      --bg-0:#fff6fb;
+      --bg-1:#ffeaf5;
+      --card:#ffffffcc;
+      --text:#141318;
+      --muted:#5b5563;
+      --line:#f0d6e6;
+      --shadow: 0 18px 50px rgba(25, 10, 20, .10);
+      --shadow2: 0 10px 30px rgba(25, 10, 20, .10);
+      --radius: 22px;
+      --accent:#d41478;
+      --accent2:#7c3aed;
       --link:#0b65c2;
-      --radius: 18px;
-      --radius2: 14px;
-      --max: 1120px;
-      --sidebar: 270px;
-      --gap: 22px;
+      --chip:#fff;
     }
 
     *{ box-sizing:border-box; }
-    html, body{ height:100%; }
     body{
       margin:0;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Apple Color Emoji","Segoe UI Emoji";
-      color: var(--text);
-      background:
-        radial-gradient(1100px 600px at 15% 5%, rgba(219,39,119,.18), transparent 60%),
-        radial-gradient(900px 520px at 85% 12%, rgba(168,85,247,.15), transparent 62%),
-        radial-gradient(900px 520px at 55% 92%, rgba(59,130,246,.10), transparent 60%),
-        var(--bg);
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", "Helvetica Neue", sans-serif;
+      color:var(--text);
       line-height:1.7;
+      background:
+        radial-gradient(1100px 700px at 15% 10%, rgba(212,20,120,.10), transparent 60%),
+        radial-gradient(900px 700px at 90% 20%, rgba(124,58,237,.10), transparent 55%),
+        linear-gradient(180deg, var(--bg-1), var(--bg-0));
+      min-height:100vh;
     }
 
-    a{ color: var(--link); text-decoration:none; }
+    a{ color:var(--link); text-decoration:none; }
     a:hover{ text-decoration:underline; }
 
     .wrap{
-      max-width: var(--max);
+      max-width: 1120px;
       margin: 34px auto;
-      padding: 0 16px 44px;
+      padding: 0 16px 48px;
       display:grid;
-      grid-template-columns: var(--sidebar) 1fr;
-      gap: var(--gap);
-      align-items:start;
+      grid-template-columns: 280px 1fr;
+      gap: 18px;
     }
 
-    /* Sidebar */
-    .side{
+    .sidebar{
       position: sticky;
-      top: 16px;
-      border: 1px solid var(--border);
+      top: 18px;
+      align-self: start;
+      background: var(--card);
+      border: 1px solid rgba(240, 214, 230, .75);
       border-radius: var(--radius);
-      background: linear-gradient(180deg, rgba(255,255,255,.78), rgba(255,255,255,.62));
       box-shadow: var(--shadow2);
-      padding: 18px 16px;
+      padding: 18px;
       backdrop-filter: blur(10px);
     }
 
     .avatar{
-      width: 86px;
-      height: 86px;
+      width: 70px; height: 70px;
       border-radius: 18px;
-      background: linear-gradient(135deg, rgba(219,39,119,.22), rgba(168,85,247,.18));
-      border: 1px solid var(--border);
+      background:
+        radial-gradient(circle at 30% 30%, rgba(212,20,120,.85), rgba(124,58,237,.85));
+      box-shadow: 0 10px 25px rgba(212,20,120,.18);
       display:flex;
       align-items:center;
       justify-content:center;
-      font-weight: 800;
+      color:#fff;
+      font-weight:800;
       letter-spacing:.5px;
       margin-bottom: 14px;
       user-select:none;
     }
 
     .name{
-      font-size: 22px;
-      font-weight: 850;
-      margin: 2px 0 2px;
+      font-size: 26px;
+      font-weight: 900;
+      margin: 0 0 4px 0;
+      letter-spacing: .2px;
     }
     .tagline{
-      margin:0 0 12px;
-      color: var(--muted);
-      font-size: 13.5px;
+      margin:0 0 14px 0;
+      color:var(--muted);
+      font-size: 14.5px;
     }
 
-    .pillrow{ margin: 10px 0 10px; display:flex; flex-wrap:wrap; gap:8px; }
-    .pill{
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
+    .chips{ display:flex; flex-wrap:wrap; gap:8px; margin: 10px 0 14px; }
+    .chip{
+      background: var(--chip);
+      border: 1px solid rgba(240,214,230,.9);
       padding: 6px 10px;
-      border:1px solid var(--border);
       border-radius: 999px;
       font-size: 12.5px;
-      color:#2b2b2b;
-      background: rgba(255,255,255,.75);
-    }
-    .dot{
-      width:8px; height:8px; border-radius:99px;
-      background: linear-gradient(135deg, var(--accent), var(--accent2));
-      box-shadow: 0 6px 16px rgba(219,39,119,.25);
-      flex: 0 0 auto;
+      color:#3a3242;
     }
 
     .nav{
-      margin-top: 14px;
       display:flex;
       flex-direction:column;
-      gap: 6px;
+      gap:6px;
+      margin-top: 10px;
     }
     .nav a{
       display:flex;
-      align-items:center;
       justify-content:space-between;
-      padding: 10px 10px;
-      border-radius: 12px;
-      color: #222;
+      align-items:center;
+      padding: 10px 12px;
+      border-radius: 14px;
       border: 1px solid transparent;
+      color: #231b2a;
     }
     .nav a:hover{
-      background: rgba(219,39,119,.06);
-      border-color: rgba(219,39,119,.14);
+      background: rgba(255,255,255,.9);
+      border-color: rgba(240,214,230,.95);
       text-decoration:none;
     }
     .nav .hint{
@@ -137,373 +124,354 @@
 
     .contact{
       margin-top: 14px;
-      padding-top: 12px;
-      border-top: 1px dashed rgba(0,0,0,.12);
-      font-size: 13.5px;
-      color: #303030;
-    }
-    .contact div{ margin: 6px 0; }
-    .k{ color: var(--muted); }
-
-    /* Main */
-    .main{
+      padding-top: 14px;
+      border-top: 1px solid rgba(240,214,230,.85);
+      font-size: 14px;
+      color: var(--muted);
       display:flex;
       flex-direction:column;
-      gap: var(--gap);
+      gap:6px;
+      word-break: break-word;
     }
+    .contact strong{ color:#2a2331; }
 
-    .card{
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      background: var(--card);
-      box-shadow: var(--shadow);
-      backdrop-filter: blur(10px);
-      padding: 20px 20px;
-    }
+    .main{ display:flex; flex-direction:column; gap: 14px; }
 
     .hero{
-      padding: 22px 22px;
-      background:
-        radial-gradient(900px 200px at 10% 0%, rgba(219,39,119,.20), transparent 60%),
-        radial-gradient(900px 240px at 90% 0%, rgba(168,85,247,.18), transparent 60%),
-        linear-gradient(180deg, rgba(255,255,255,.82), rgba(255,255,255,.65));
+      background: var(--card);
+      border: 1px solid rgba(240,214,230,.75);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 22px;
+      backdrop-filter: blur(10px);
+      overflow:hidden;
+      position:relative;
+    }
+    .hero:before{
+      content:"";
+      position:absolute;
+      inset:-80px -120px auto auto;
+      width: 360px; height: 220px;
+      background: radial-gradient(circle at 20% 30%, rgba(212,20,120,.25), transparent 55%),
+                  radial-gradient(circle at 70% 60%, rgba(124,58,237,.22), transparent 55%);
+      transform: rotate(12deg);
+      filter: blur(1px);
+      pointer-events:none;
     }
 
-    h1{
-      margin:0;
-      font-size: 34px;
-      letter-spacing: -0.6px;
-      font-weight: 900;
+    .hero h1{
+      margin: 0 0 8px 0;
+      font-size: 40px;
+      font-weight: 950;
+      letter-spacing: .2px;
+      line-height:1.15;
     }
-    .sub{
-      margin: 6px 0 0;
+    .hero p{
+      margin: 0 0 14px 0;
       color: var(--muted);
-      font-size: 14.5px;
+      font-size: 15.5px;
+      max-width: 72ch;
     }
-
-    .quicklinks{
-      margin-top: 14px;
+    .buttons{
       display:flex;
+      gap:10px;
       flex-wrap:wrap;
-      gap: 10px;
+      margin-top: 10px;
     }
     .btn{
       display:inline-flex;
       align-items:center;
       gap:8px;
-      padding: 9px 12px;
+      padding: 10px 14px;
       border-radius: 999px;
-      border: 1px solid rgba(219,39,119,.22);
-      background: rgba(255,255,255,.72);
-      color:#1b1b1b;
-      font-size: 13.5px;
-      box-shadow: 0 10px 20px rgba(219,39,119,.08);
-    }
-    .btn:hover{ text-decoration:none; transform: translateY(-1px); }
-
-    .section-title{
-      margin: 0 0 10px;
-      font-size: 20px;
-      font-weight: 900;
-      letter-spacing: -0.2px;
-      display:flex;
-      align-items:center;
-      gap: 10px;
-    }
-    .bar{
-      width: 10px; height: 22px; border-radius: 999px;
-      background: linear-gradient(180deg, var(--accent), var(--accent2));
-      box-shadow: 0 12px 22px rgba(219,39,119,.18);
-      flex: 0 0 auto;
-    }
-
-    .entry{
-      padding: 14px 14px;
-      border: 1px solid rgba(0,0,0,.06);
-      border-radius: var(--radius2);
-      background: rgba(255,255,255,.62);
-      margin-top: 12px;
-    }
-    .eh{
-      display:flex;
-      flex-wrap:wrap;
-      justify-content:space-between;
-      gap: 10px;
-    }
-    .et{
-      font-weight: 850;
-    }
-    .em{
-      color: var(--muted);
-      font-size: 13.5px;
-      white-space:nowrap;
-    }
-    .es{
-      margin-top: 6px;
-      color: #2a2a2a;
+      border: 1px solid rgba(240,214,230,.95);
+      background: rgba(255,255,255,.92);
+      box-shadow: 0 8px 18px rgba(25,10,20,.07);
+      color:#201826;
+      font-weight: 700;
       font-size: 14px;
     }
-    ul{ margin: 10px 0 0; padding-left: 18px; }
+    .btn.primary{
+      background: linear-gradient(90deg, rgba(212,20,120,.95), rgba(124,58,237,.92));
+      color:#fff;
+      border-color: transparent;
+      box-shadow: 0 14px 28px rgba(212,20,120,.18);
+    }
+    .btn:hover{ text-decoration:none; transform: translateY(-1px); transition: .15s ease; }
+
+    .grid{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+    }
+
+    .card{
+      background: var(--card);
+      border: 1px solid rgba(240,214,230,.75);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow2);
+      padding: 20px;
+      backdrop-filter: blur(10px);
+    }
+
+    .section-title{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      font-size: 22px;
+      font-weight: 900;
+      margin: 0 0 12px 0;
+      letter-spacing: .2px;
+    }
+    .bar{
+      width: 10px;
+      height: 26px;
+      border-radius: 999px;
+      background: linear-gradient(180deg, rgba(212,20,120,.95), rgba(124,58,237,.92));
+      box-shadow: 0 10px 18px rgba(212,20,120,.15);
+    }
+
+    .entry{ margin: 14px 0; }
+    .entry:first-child{ margin-top: 0; }
+    .entry-header{
+      display:flex;
+      justify-content:space-between;
+      gap:10px;
+      flex-wrap:wrap;
+      align-items:flex-start;
+    }
+    .entry-title{ font-weight: 900; font-size: 16px; }
+    .entry-meta{
+      color: var(--muted);
+      font-size: 13px;
+      white-space: nowrap;
+    }
+    .entry-sub{ margin-top: 4px; color:#2b2432; font-weight: 650; }
+    ul{ margin: 10px 0 0 18px; padding:0; }
     li{ margin: 7px 0; }
 
-    /* Gallery */
-    .gallery{
+    .split{
       display:grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 12px;
-      margin-top: 12px;
-    }
-    .ph{
-      position:relative;
-      border-radius: 16px;
-      overflow:hidden;
-      border: 1px solid rgba(0,0,0,.08);
-      background: rgba(255,255,255,.62);
-      box-shadow: 0 10px 22px rgba(15,23,42,.08);
-      aspect-ratio: 4 / 3;
-    }
-    .ph img{
-      width:100%;
-      height:100%;
-      object-fit: cover;
-      display:block;
-      transform: scale(1.02);
-    }
-    .ph:hover img{ transform: scale(1.05); transition: transform .35s ease; }
-    .cap{
-      position:absolute;
-      left:10px; bottom:10px;
-      padding: 6px 10px;
-      border-radius: 999px;
-      font-size: 12.5px;
-      color: #1c1c1c;
-      background: rgba(255,255,255,.78);
-      border: 1px solid rgba(0,0,0,.08);
-      backdrop-filter: blur(8px);
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
     }
 
-    .foot{
+    .footer{
       color: var(--muted);
       font-size: 13px;
       text-align:center;
-      padding: 10px 0 0;
+      padding: 8px 0 0;
     }
 
-    /* Responsive */
-    @media (max-width: 980px){
+    @media (max-width: 920px){
       .wrap{ grid-template-columns: 1fr; }
-      .side{ position:relative; top:0; }
-      .gallery{ grid-template-columns: repeat(2, 1fr); }
-    }
-    @media (max-width: 520px){
-      h1{ font-size: 28px; }
-      .gallery{ grid-template-columns: 1fr; }
+      .sidebar{ position: relative; top: auto; }
+      .split{ grid-template-columns: 1fr; }
+      .hero h1{ font-size: 34px; }
     }
   </style>
 </head>
 
 <body>
   <div class="wrap">
-    <!-- Sidebar -->
-    <aside class="side">
+    <!-- LEFT / SIDEBAR -->
+    <aside class="sidebar">
       <div class="avatar">RS</div>
-      <div class="name">Ruoyi Shi (石若依)</div>
-      <p class="tagline">M.S. Economics @ ASU · Law & Compliance · Data Analysis</p>
+      <div class="name">Ruoyi Shi</div>
+      <p class="tagline">M.S. in Economics (ASU) · Law & Compliance · Data Analysis</p>
 
-      <div class="pillrow">
-        <span class="pill"><span class="dot"></span>Econometrics</span>
-        <span class="pill"><span class="dot"></span>Applied Statistics</span>
-        <span class="pill"><span class="dot"></span>Risk & Compliance</span>
-        <span class="pill"><span class="dot"></span>Python / R / Excel</span>
+      <div class="chips">
+        <span class="chip">Econometrics</span>
+        <span class="chip">Applied Statistics</span>
+        <span class="chip">Risk & Compliance</span>
+        <span class="chip">Python / R / Excel</span>
+        <span class="chip">Bilingual (CN/EN)</span>
       </div>
 
-      <nav class="nav">
+      <nav class="nav" aria-label="Site navigation">
         <a href="#about"><span>About</span><span class="hint">Intro</span></a>
-        <a href="#education"><span>Education</span><span class="hint">Timeline</span></a>
-        <a href="#experience"><span>Experience</span><span class="hint">Work</span></a>
+        <a href="#education"><span>Education</span><span class="hint">Academics</span></a>
+        <a href="#experience"><span>Work Experience</span><span class="hint">Roles</span></a>
+        <a href="#coursework"><span>Course Work</span><span class="hint">ECN 591</span></a>
         <a href="#awards"><span>Awards</span><span class="hint">Honors</span></a>
-        <a href="#skills"><span>Skills</span><span class="hint">Highlights</span></a>
-        <a href="#life"><span>My Life</span><span class="hint">Gallery</span></a>
+        <a href="#skills"><span>Skills</span><span class="hint">Toolbox</span></a>
       </nav>
 
       <div class="contact">
-        <div><span class="k">Email:</span> ruoyishi@asu.edu</div>
-        <div><span class="k">GitHub:</span> <a href="https://github.com/Ruoyi11" target="_blank" rel="noopener noreferrer">@Ruoyi11</a></div>
+        <div><strong>Email:</strong> ruoyishi@asu.edu</div>
+        <div><strong>GitHub:</strong> <a href="https://github.com/Ruoyi11" target="_blank" rel="noopener noreferrer">@Ruoyi11</a></div>
+        <div><strong>Problem Set Repo:</strong> <a href="https://github.com/Ruoyi11/market-design-problem-set-1" target="_blank" rel="noopener noreferrer">market-design-problem-set-1</a></div>
       </div>
     </aside>
 
-    <!-- Main -->
+    <!-- RIGHT / MAIN -->
     <main class="main">
-      <section class="card hero">
-        <h1>Ruoyi Shi</h1>
-        <p class="sub">Arizona State University · M.S. in Economics · Background in Law, Compliance & Risk Control</p>
-
-        <div class="quicklinks">
-          <a class="btn" href="https://github.com/Ruoyi11/market-design-problem-set-1" target="_blank" rel="noopener noreferrer">Problem Set Repository</a>
-          <a class="btn" href="#life">My Life Gallery</a>
-          <a class="btn" href="mailto:ruoyishi@asu.edu">Email Me</a>
-        </div>
-      </section>
-
-      <section id="about" class="card">
-        <div class="section-title"><span class="bar"></span>About</div>
+      <section class="hero">
+        <h1>Hi, I’m Ruoyi.</h1>
         <p>
-          I am <strong>Ruoyi Shi</strong> (石若依), currently pursuing a <strong>Master of Economics</strong> at Arizona State University in Tempe.
-          My experience bridges <strong>law</strong>, <strong>compliance and risk control</strong>, and <strong>data-driven analysis</strong>.
-          I am interested in applying econometrics and applied statistics to real-world policy and business questions, especially in regulated industries.
+          I’m currently pursuing a <strong>Master of Economics</strong> at Arizona State University.
+          My background combines <strong>law</strong>, <strong>compliance & risk control</strong>, and <strong>data-driven analysis</strong>.
+          I’m interested in applying econometrics and applied statistics to real-world policy and business problems.
         </p>
+        <div class="buttons">
+          <a class="btn primary" href="https://ruoyi11.github.io/" target="_blank" rel="noopener noreferrer">Open this site</a>
+          <a class="btn" href="https://github.com/Ruoyi11/market-design-problem-set-1" target="_blank" rel="noopener noreferrer">Course repository</a>
+          <a class="btn" href="#coursework">Jump to coursework</a>
+        </div>
       </section>
 
-      <section id="education" class="card">
-        <div class="section-title"><span class="bar"></span>Education</div>
+      <div class="grid">
+        <section id="about" class="card">
+          <div class="section-title"><span class="bar"></span>About</div>
+          <p style="margin:0; color:var(--muted);">
+            I enjoy bridging rigorous legal thinking with quantitative analysis.
+            In practice, that means turning complex rules, contracts, and real-world constraints into structured decisions and actionable insights.
+          </p>
+        </section>
 
-        <div class="entry">
-          <div class="eh">
-            <div class="et">Arizona State University · Tempe, United States</div>
-            <div class="em">Aug 2025 – Present</div>
+        <section id="education" class="card">
+          <div class="section-title"><span class="bar"></span>Education</div>
+
+          <div class="entry">
+            <div class="entry-header">
+              <div class="entry-title">Arizona State University · Tempe, United States</div>
+              <div class="entry-meta">Aug 2025 – Present</div>
+            </div>
+            <div class="entry-sub">Master of Economics · GPA (4.0 scale): 3.67</div>
+            <ul>
+              <li>Coursework in applied statistics, data analysis, and econometrics</li>
+              <li>Skilled in Python, R, Excel, and data visualization tools</li>
+            </ul>
           </div>
-          <div class="es">Master of Economics · GPA (4.0 scale): 3.67</div>
+
+          <div class="entry">
+            <div class="entry-header">
+              <div class="entry-title">Nanjing University, Law School · Nanjing, China</div>
+              <div class="entry-meta">Sep 2022 – Jun 2024</div>
+            </div>
+            <div class="entry-sub">Master of Laws (LL.M.) · GPA (4.0 scale): 3.48</div>
+          </div>
+
+          <div class="entry">
+            <div class="entry-header">
+              <div class="entry-title">Nanjing University, Law School · Nanjing, China</div>
+              <div class="entry-meta">Sep 2018 – Jun 2022</div>
+            </div>
+            <div class="entry-sub">Bachelor of Law (Major: Law) · GPA (4.0 scale): 3.20</div>
+            <div style="color:var(--muted); font-size:13px; margin-top:4px;">Rank: Top 2 of 16 in the class</div>
+          </div>
+        </section>
+
+        <section id="experience" class="card">
+          <div class="section-title"><span class="bar"></span>Work Experience</div>
+
+          <div class="entry">
+            <div class="entry-header">
+              <div class="entry-title">Nanjing Boyun Venture Capital Co., Ltd · Nanjing, China</div>
+              <div class="entry-meta">Jun 2024 – Jul 2025</div>
+            </div>
+            <div class="entry-sub">Compliance and Risk Control Specialist</div>
+            <ul>
+              <li>Reviewed and analyzed financial contracts (investment, loan, equity transfer) to identify legal risks and propose revisions.</li>
+              <li>Advised on transaction risk management by spotting compliance pitfalls and suggesting practical, regulation-aligned solutions.</li>
+              <li>Researched venture capital and financial regulations; assessed how regulatory changes affect investment decisions and operations.</li>
+              <li>Prepared structured reports summarizing key issues, legal findings, and mitigation strategies.</li>
+            </ul>
+          </div>
+
+          <div class="entry">
+            <div class="entry-header">
+              <div class="entry-title">Intermediate People’s Court of Jiangsu Province · Nanjing, China</div>
+              <div class="entry-meta">Oct 2023 – Jan 2024</div>
+            </div>
+            <div class="entry-sub">Intern, Financial Division</div>
+            <ul>
+              <li>Conducted legal research to support mediation in financial disputes; identified key legal issues and developed arguments for resolution.</li>
+              <li>Assisted mediation involving financial contracts and investments; facilitated negotiations by clarifying rights, obligations, and outcomes.</li>
+              <li>Drafted legal summaries and internal reports documenting mediation progress and results.</li>
+            </ul>
+          </div>
+
+          <div class="entry">
+            <div class="entry-header">
+              <div class="entry-title">Nanjing Boyun Venture Capital Co., Ltd · Nanjing, China</div>
+              <div class="entry-meta">Jun 2023 – Sep 2023</div>
+            </div>
+            <div class="entry-sub">Summer Intern, Compliance & Risk Control Department</div>
+            <ul>
+              <li>Managed compliance documents (regulatory filings, audit materials, due diligence records).</li>
+              <li>Supported policy updates by reviewing regulations and best practices; delivered a structured internal report.</li>
+              <li>Compiled financial data, market trends, and competitor intelligence to support project risk assessments.</li>
+            </ul>
+          </div>
+
+          <div class="entry">
+            <div class="entry-header">
+              <div class="entry-title">Jiangsu Bixin Law Firm · China</div>
+              <div class="entry-meta">Jun 2022 – Sep 2022</div>
+            </div>
+            <div class="entry-sub">Summer Intern</div>
+            <ul>
+              <li>Researched laws, regulations, and prior cases to support mediation in financial disputes.</li>
+              <li>Supported dispute mediation involving investment agreements, loan disputes, and financial contracts.</li>
+              <li>Assisted in drafting settlement agreements that accurately captured negotiated terms.</li>
+            </ul>
+          </div>
+        </section>
+
+        <section id="coursework" class="card">
+          <div class="section-title"><span class="bar"></span>Course Work (ECN 591)</div>
+
+          <div class="split">
+            <div>
+              <div class="entry-title" style="font-size:16px;">Problem Set 1</div>
+              <p style="margin:6px 0 10px; color:var(--muted);">
+                Slides and materials for Market Design — Problem Set 1.
+              </p>
+              <a class="btn" href="https://github.com/Ruoyi11/market-design-problem-set-1" target="_blank" rel="noopener noreferrer">
+                Open repository
+              </a>
+            </div>
+
+            <div>
+              <div class="entry-title" style="font-size:16px;">Chapter Summary</div>
+              <p style="margin:6px 0 10px; color:var(--muted);">
+                Summary slides created in Beamer (PDF stored in the repository).
+              </p>
+              <a class="btn" href="https://github.com/Ruoyi11/market-design-problem-set-1" target="_blank" rel="noopener noreferrer">
+                View files
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <section id="awards" class="card">
+          <div class="section-title"><span class="bar"></span>Scholarships & Awards</div>
           <ul>
-            <li>Coursework in applied statistics, data analysis, and econometrics</li>
-            <li>Skilled in Python, R, Excel, and data visualization tools</li>
+            <li>MS ECON International Scholarship (Arizona State University) — Aug 2025</li>
+            <li>Outstanding Graduation Thesis of Juris Master (LL.M.), Nanjing University — May 2024</li>
+            <li>Outstanding Undergraduate Student Award, Nanjing University — May 2022</li>
+            <li>People’s Scholarship (First Prize) — Dec 2019, Dec 2020</li>
+            <li>People’s Scholarship (Second Prize) — Dec 2021</li>
           </ul>
-        </div>
+        </section>
 
-        <div class="entry">
-          <div class="eh">
-            <div class="et">Nanjing University · Law School · Nanjing, China</div>
-            <div class="em">Sep 2022 – Jun 2024</div>
-          </div>
-          <div class="es">Master of Laws (LL.M.) · GPA (4.0 scale): 3.48</div>
-        </div>
-
-        <div class="entry">
-          <div class="eh">
-            <div class="et">Nanjing University · Law School · Nanjing, China</div>
-            <div class="em">Sep 2018 – Jun 2022</div>
-          </div>
-          <div class="es">Bachelor of Law · GPA (4.0 scale): 3.20</div>
-          <div class="es" style="color:#6b6b6b; font-size:13.5px;">Rank: Top 2 of 16 in the class</div>
-        </div>
-      </section>
-
-      <section id="experience" class="card">
-        <div class="section-title"><span class="bar"></span>Work Experience</div>
-
-        <div class="entry">
-          <div class="eh">
-            <div class="et">Nanjing Boyun Venture Capital Co., Ltd · Nanjing, China</div>
-            <div class="em">Jun 2024 – Jul 2025</div>
-          </div>
-          <div class="es"><strong>Compliance and Risk Control Specialist</strong></div>
+        <section id="skills" class="card">
+          <div class="section-title"><span class="bar"></span>Skills & Interests</div>
           <ul>
-            <li>Reviewed financial contracts (investment, loan, equity transfer) to identify legal risks and propose revisions.</li>
-            <li>Advised on transaction risk management and regulatory compliance with practical mitigation solutions.</li>
-            <li>Researched venture capital and financial regulations; assessed impacts of regulatory changes on decisions and operations.</li>
-            <li>Prepared structured reports summarizing key findings and recommended actions.</li>
+            <li><strong>Communication:</strong> public communication, structured interviewing, dispute mediation</li>
+            <li><strong>Research & documentation:</strong> literature review, report drafting, data compilation</li>
+            <li><strong>Organization:</strong> file management, compliance documentation, multitasking</li>
+            <li><strong>Technical:</strong> Python, R, Excel, data visualization tools</li>
+            <li><strong>Languages:</strong> Chinese (native), English (IELTS 7.0)</li>
+            <li><strong>Sports:</strong> National-Level Volleyball Master Athlete</li>
           </ul>
-        </div>
+        </section>
 
-        <div class="entry">
-          <div class="eh">
-            <div class="et">Intermediate People’s Court of Jiangsu Province · Nanjing, China</div>
-            <div class="em">Oct 2023 – Jan 2024</div>
-          </div>
-          <div class="es"><strong>Intern, Financial Division</strong></div>
-          <ul>
-            <li>Conducted legal research supporting mediation in financial disputes and drafted internal case summaries.</li>
-            <li>Assisted negotiation by clarifying legal rights, obligations, and potential outcomes for involved parties.</li>
-            <li>Documented mediation progress and outcomes in structured reports.</li>
-          </ul>
-        </div>
-
-        <div class="entry">
-          <div class="eh">
-            <div class="et">Nanjing Boyun Venture Capital Co., Ltd · Nanjing, China</div>
-            <div class="em">Jun 2023 – Sep 2023</div>
-          </div>
-          <div class="es"><strong>Summer Intern, Compliance & Risk Control</strong></div>
-          <ul>
-            <li>Organized compliance documents (regulatory filings, audit materials, due diligence records).</li>
-            <li>Supported policy updates through regulation review and internal best-practice research.</li>
-            <li>Compiled market and competitor data to support project risk assessments.</li>
-          </ul>
-        </div>
-
-        <div class="entry">
-          <div class="eh">
-            <div class="et">Jiangsu Bixin Law Firm · China</div>
-            <div class="em">Jun 2022 – Sep 2022</div>
-          </div>
-          <div class="es"><strong>Summer Intern</strong></div>
-          <ul>
-            <li>Researched laws, regulations, and prior cases to support mediation in financial disputes.</li>
-            <li>Supported mediation involving investment agreements, loan disputes, and financial contracts.</li>
-            <li>Assisted in drafting settlement agreements reflecting negotiated terms.</li>
-          </ul>
-        </div>
-      </section>
-
-      <section id="awards" class="card">
-        <div class="section-title"><span class="bar"></span>Scholarships & Awards</div>
-        <ul>
-          <li>MS ECON International Scholarship (Arizona State University) — Aug 2025</li>
-          <li>Outstanding Graduation Thesis of Juris Master (LL.M.), Nanjing University — May 2024</li>
-          <li>Outstanding Undergraduate Student Award, Nanjing University — May 2022</li>
-          <li>People’s Scholarship (First Prize) — Dec 2019, Dec 2020</li>
-          <li>People’s Scholarship (Second Prize) — Dec 2021</li>
-        </ul>
-      </section>
-
-      <section id="skills" class="card">
-        <div class="section-title"><span class="bar"></span>Skills & Interests</div>
-        <ul>
-          <li><strong>Communication:</strong> public communication, structured interviewing, dispute mediation</li>
-          <li><strong>Research & documentation:</strong> literature review, report drafting, data compilation</li>
-          <li><strong>Organization:</strong> file management, compliance documentation, multitasking</li>
-          <li><strong>Technical:</strong> Python, R, Excel, data visualization tools</li>
-          <li><strong>Languages:</strong> Chinese (native), English (IELTS 7.0)</li>
-          <li><strong>Sports:</strong> National-Level Volleyball Master Athlete</li>
-        </ul>
-      </section>
-
-      <section id="life" class="card">
-        <div class="section-title"><span class="bar"></span>My Life</div>
-        <p style="margin:0; color:#5b5b5b;">
-          A few moments I’d like to remember. (Tip: upload your photos to <code>assets/life/</code> and update the file names below.)
-        </p>
-
-        <div class="gallery">
-          <!-- Replace the src with your uploaded file paths -->
-          <div class="ph">
-            <img src="assets/life/life-01.jpg" alt="My Life photo 1">
-            <div class="cap">Ocean</div>
-          </div>
-          <div class="ph">
-            <img src="assets/life/life-02.jpg" alt="My Life photo 2">
-            <div class="cap">Sunset</div>
-          </div>
-          <div class="ph">
-            <img src="assets/life/life-03.jpg" alt="My Life photo 3">
-            <div class="cap">Cliff Walk</div>
-          </div>
-          <div class="ph">
-            <img src="assets/life/life-04.jpg" alt="My Life photo 4">
-            <div class="cap">Blue Day</div>
-          </div>
-          <div class="ph">
-            <img src="assets/life/life-05.jpg" alt="My Life photo 5">
-            <div class="cap">Seals</div>
-          </div>
-          <div class="ph">
-            <img src="assets/life/life-06.jpg" alt="My Life photo 6">
-            <div class="cap">Coast</div>
-          </div>
-        </div>
-      </section>
-
-      <div class="foot">Last updated: Feb 2026</div>
+        <div class="footer">Last updated: Feb 2026</div>
+      </div>
     </main>
   </div>
 </body>
 </html>
+
